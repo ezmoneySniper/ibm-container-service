@@ -23,6 +23,20 @@ spec:
           value: %COMPOSER_CARD%
         - name: COMPOSER_NAMESPACES
           value: never
+        - name: COMPOSER_AUTHENTICATION
+          value: 'true'
+        - name: COMPOSER_MULTIUSER
+          value: 'true'
+        - name: COMPOSER_PROVIDERS
+          value: '{"github": {
+                  "provider": "github",
+                  "module": "passport-github",
+                  "clientID": "ENTER YOUR OWN CLIENTID",
+                  "clientSecret": "ENTER YOUR OWN CLIENTSECRET",
+                  "authPath": "/auth/github",
+                  "callbackURL": "/auth/github/callback",
+                  "successRedirect": "/",
+                  "failureRedirect": "/"}}'
         volumeMounts:
         - name: composer-card-store
           mountPath: /home/composer/.composer
